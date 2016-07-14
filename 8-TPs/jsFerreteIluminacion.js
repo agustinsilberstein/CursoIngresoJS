@@ -11,53 +11,102 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
 function CalcularPrecio () 
 {
  	var cantidad;
- 	var marca;
- 	var precioBruto;
- 	var precioNeto;
+ 	var empresa;
+ 	var precioConDescuento;
  	var descuento;
- 	precioBruto = 35*cantidad;
- 	precioNeto=precioBruto*descuento;
+ 	var precioBruto;
+ 	var precioFinal;
 
- 	cantidad= document.getElementById('Cantidad').value;
- 	marca= document.getElementById('Marca').value;
 
- 	switch(marca){
+ 	cantidad=document.getElementById('Cantidad').value;
+ 	empresa=document.getElementById('Marca').value;
+ 	precioBruto=cantidad*35;
 
+
+ 	switch(empresa){
  		case "ArgentinaLuz":
- 			if (cantidad==3) 
- 			{
- 				descuento=0.15
 
+ 				if(cantidad<3){descuento=1}
  				else{
- 						if (cantidad==4)
- 						descuento= 0.75;
- 						
- 						else{
- 							 if(cantidad==5)
- 							 descuento=0.60;
+  				if(cantidad==3){descuento=0.85}
+ 				else { 
+ 						if (cantidad==4) {descuento=0.75}
+ 						else { 
+ 							if (cantidad==5) {descuento=0.60}
+ 							else{descuento=0.50}
 
+ 							}		
+ 					
+ 					 }}
+ 							
+ 					
+ 					break;
+							
+		case "FelipeLamparas":
 
-							 	else{ 
-									descuento= 0.50;
- 							 		}
- 							 	
- 							 }
+				if(cantidad<3){descuento=1}
+ 				else{
+					if(cantidad==3){descuento=0.9}
+ 					else { 
+ 						if (cantidad==4) {descuento=0.75}
+ 						else { 
+ 							if (cantidad==5) {descuento=0.70}
+ 							else{descuento=0.50}
+
+ 							}}		
+ 					
+ 					 }
+		
+			break;
+
+		default:
+		if(cantidad<3){descuento=1}
+ 		else{
+
+			if(cantidad==3){descuento=0.95}
+ 			else {  						
+ 				if (cantidad==4) {descuento=0.80}
+ 				else { 
+ 							if (cantidad==5) {descuento=0.70}
+ 							else{descuento=0.50}
  					}
- 			
- 		break;
-
-
-
- 		case "“FelipeLamparas”":
- 		case "JeLuz":
- 		case "HazIluminacion":
- 		case "Osram":
- 		}//switch(marca)
- 	document.getElementById('precioDescuento').value=precioNeto;
-
-}//Function CalcularPrecio 
+ 				}
+ 			}
 
 
 
 
 
+
+
+
+					}//switch
+
+					
+
+		precioConDescuento= precioBruto*descuento;
+
+		if (precioConDescuento>120) { precioFinal=precioConDescuento*1.1}
+			else{precioFinal=precioConDescuento}
+					
+
+	document.getElementById('precioDescuento').value= precioFinal;
+	
+	if (precioConDescuento>120) {alert("Usted pago "+ precioConDescuento*0.1 +" de IIBB")}
+
+
+
+	
+
+
+ 					
+
+ 						
+
+
+ 		
+
+ 					
+
+
+}//fin function
