@@ -9,5 +9,72 @@ F.	Nacionalidad, “A” para argentinos, “E” para extranjeros, “N” para
  */
 function ComenzarIngreso () 
 {
+ var edad=prompt("Ingrese edad");
+ while(edad<18||edad>90)
+ {
+ 	edad=prompt("Ingrese edad");
+ 	continue;
+ }
+document.getElementById('Edad').value=edad;
+
+ var sexo=prompt("Ingrese sexo");
+ while(sexo!="M" && sexo!="F")
+ 	{ sexo=prompt("Ingrese sexo");
+ 		continue;
+ 	}
+
+ document.getElementById('Sexo').value=sexo;
+
+
+ var estadoCivil=prompt("Ingrese estado civil");
+ while(estadoCivil<0 ||estadoCivil>5)
+ { 
+	estadoCivil=prompt("Ingrese estado civil");
+	continue;
+ }
+
+ document.getElementById('EstadoCivil').value=estadoCivil;
+
+var sueldoBruto=prompt("Ingrese sueldo bruto");
+while(sueldoBruto<8000)
+{
+sueldoBruto=prompt("Ingrese sueldo bruto");
+continue;
+}
+
+document.getElementById('Sueldo').value=sueldoBruto;
+
+
+var legajoValidado=prompt("Ingrese numero de legajo");
+while(legajoValidado<999){
+	legajoValidado=prompt("Ingrese numero de legajo");
+	continue;
+}
+
+
+document.getElementById('Legajo').value=legajoValidado;
+
+var nacionalidad=prompt("Ingrese su nacionalidad");
+while(nacionalidad!=A&&nacionalidad!=B&&nacionalidad!=C)
+{
+	nacionalidad=prompt("Ingrese su nacionalidad")
+	}
+
+
+document.getElementById('Nacionalidad').value=nacionalidad;
+
+
  
+
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+
 }
